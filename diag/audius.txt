@@ -1,0 +1,35 @@
+== trending
+{"data":[{"track_id":746414052,"description":"Minimix/Mashup \n\nSongs Used —\u003e Liquid Stranger \u0026 TVBOO - Cracked, Zingara \u0026 Stellar - Telekinesis, LSDREAM \u0026 Kotek - Koolaid Man","genre":"Electronic","id":"W08NKdZ","track_cid":"baeaaaiqseav4ansc2y5c6243qyd5evs25gzur457mfk5fohpxka5dmnrmaf72","preview_cid":null,"orig_file_cid":"baeaaaiqseceo4tu3jkilumjb32ghkrlzb5iz3dsmlqy667nqsegwoegvbqb4w","orig_filename":"Serato Recording 7-trimmed.wav","is_original_available":false,"mood":"Defiant","release_date":"2026-10-24T14:31:47Z","repost_count":71,"favorite_count":90,"comment_count":36,"tags":"edm,bass,dubstep,dj,djmix,alphatheta,wonky,midtempo,hiphop,audiusexclusive","title":"iLLPeTiLL - Post HospitiLL Slapperzzz Mix (Audius Exclusive)","slug":"illpetill-post-hospitill-slapperzzz-mix-audius-exclusive","duration":394,"is_downloadable":false,"play_count":1754,"ddex_app":null,"pinned_comment_id":null,"playlists_containing_track":[1268366538,939322324,1169501516,420349400,1717307687],"playlists_previously_containing_track":{},"album_backlink":null,"blocknumber":121613223,"create_date":null,"created_at":"2026-10-24T14:31:47.82001Z","cover_art_sizes":"baeaaaiqsedszpcmjuiem7b5qilvws4622vnsrht4ybnlqldmfzgxogcogawsa","credits_splits":null,"isrc":null,"license":null,"iswc":null,"field_visibility":{"mood":true,"tags":true,"genre":true,"share":true,"remixes":false,"play_count":true},"has_current_user_reposted":false,"has_current_user_saved":false,"is_scheduled_release":false,"is_unlisted":false,"stem_of":null,"track_segments":[],"updated_at":"2026-10-30T23:40:03.343117Z","is_delete":false,"cover_art":null,"is_available":true,"ai_attribution_user_id":null,"allowed_api_keys":null,"audio_upload_id":"4462b29d4cb5a3db3bffba19c19833d5","preview_start_seconds":null,"bpm":88,"is_custom_bpm":false,"musical_key":"E minor","is_custom_musical_key":true,"audio_analysis_error_count":0,"comments_disabled":false,"ddex_release_ids":null,"artists":null,"resource_contributors":null,"indirect_resource_contributors":null,"rights_controller":null,"copyright_line":null,"producer_copyright_line":null,"parental_warning_type":null,"is_stream_gated":false,"is_download_gated":false,"cover_original_song_title":null,"cover_original_artist":null,"is_owned_by_user":false,"access_authorities":null,"permalink":"/iLLPeTiLL/illpetill-post-hospitill-slapperzzz-mix-audius-exclusive","is_streamable":true,"artwork":{"150x150":"https://val005.open-audio-validator.com/content/baeaaaiqsedszpcmjuiem7b5qilvws4622vnsrht4ybnlqldmfzgxogcogawsa/150x150.jpg","480x480":"https://val005.open-audio-validator.com/content/baeaaaiqsedszpcmjuiem7b5qilvws4622vnsrht4ybnlqldmfzgxogcogawsa/480x480.jpg","1000x1000":"https://val005.open-audio-validator.com/content/baeaaaiqsedszpcmjuiem7b5qilvws4622vnsrht4ybnlqldmfzgxogcogawsa/1000x1000.jpg","mirrors":["https://v.monophonic.digital","https://audius-content-6.figment.io","https://audius-01.staked.cloud"]},"stream":{"url":"https://cn3.mainnet.audiusindex.org/tra
+== id W08NKdZ
+== stream no_redirect
+{"data":"https://creatornode.audius.co/tracks/cidstream/baeaaaiqseav4ansc2y5c6243qyd5evs25gzur457mfk5fohpxka5dmnrmaf72?signature=%7B%22data%22%3A%22%7B%5C%22cid%5C%22%3A%5C%22baeaaaiqseav4ansc2y5c6243qyd5evs25gzur457mfk5fohpxka5dmnrmaf72%5C%22%2C%5C%22timestamp%5C%22%3A1793475966000%2C%5C%22trackId%5C%22%3A746414052%2C%5C%22userId%5C%22%3A0%7D%22%2C%22signature%22%3A%220xb8fd7aac6ce908587842969f553487ad25bb9aeedcab36fde98785390fcec8df169a58cdefb37ab2afa99104417cad557473889c152812b4613fe61c99d0f21201%22%7D\u0026skip_play_count=true"}
+HTTP 200
+
+== stream direct (headers)
+HTTP/2 302 
+date: Sat, 31 Oct 2026 19:46:07 GMT
+content-length: 0
+location: https://creatornode.audius.co/tracks/cidstream/baeaaaiqseav4ansc2y5c6243qyd5evs25gzur457mfk5fohpxka5dmnrmaf72?signature=%7B%22data%22%3A%22%7B%5C%22cid%5C%22%3A%5C%22baeaaaiqseav4ansc2y5c6243qyd5evs25gzur457mfk5fohpxka5dmnrmaf72%5C%22%2C%5C%22timestamp%5C%22%3A1793475967000%2C%5C%22trackId%5C%22%3A746414052%2C%5C%22userId%5C%22%3A0%7D%22%2C%22signature%22%3A%220xaf2df1a853b055ca560266f53fc6eac4cc477db2c6322b180e898701a6f1ae197511b72e7d82ef1507246fa16e83c884cc6d2b9e9fb11a029e2e1f20914a474301%22%7D&skip_play_count=true
+x-request-id: f63e10f3108e5b7f92b53a6ddd5e8076
+strict-transport-security: max-age=15724800; includeSubDomains
+cf-cache-status: MISS
+set-cookie: __cf_bm=LVD8Nt9a_3hJ.uw5ncwEkC6v3EveAO13dSg1SLW3kEQ-1793475966.9965594-1.0.1.1-KJI9vR2UxGnjJCu4.ntC8vIIz162fx6MtsPzRa0L7k7TLb88wBKAw60HVSLi_nryboaLQPR8O.MfZCD52_XykF2iCjEbXmuFILTHPCEpR4jO0tXAZPjXIdQpewYIoXR4; HttpOnly; SameSite=None; Secure; Path=/; Domain=audius.co; Expires=Sat, 31 Oct 2026 20:16:07 GMT
+server: cloudflare
+cf-ray: a53529f9be4c1761-SJC
+
+== stream follow
+HTTP 200 type=audio/mpeg size=15794069 url=https://validator.eeba4a6ca56a0d87af802270217c2a51.r2.cloudflarestorage.com/maf72/baeaaaiqseav4ansc2y5c6243qyd5evs25gzur457mfk5fohpxka5dmnrmaf72?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Checksum-Mode=ENABLED&X-Amz-Credential=79889b5430a0f0386b0853859defc17a%2F20261031%2FENAM%2Fs3%2Faws4_request&X-Amz-Date=20261031T194608Z&X-Amz-Expires=434&X-Amz-SignedHeaders=host&x-id=GetObject&X-Amz-Signature=f389ed04b2928df7eb9f7bb2d679c5155633d33c91aad7a3c1031475336671be
+== CORS final
+HTTP/2 302 
+location: https://creatornode.audius.co/tracks/cidstream/baeaaaiqseav4ansc2y5c6243qyd5evs25gzur457mfk5fohpxka5dmnrmaf72?signature=%7B%22data%22%3A%22%7B%5C%22cid%5C%22%3A%5C%22baeaaaiqseav4ansc2y5c6243qyd5evs25gzur457mfk5fohpxka5dmnrmaf72%5C%22%2C%5C%22timestamp%5C%22%3A1793475967000%2C%5C%22trackId%5C%22%3A746414052%2C%5C%22userId%5C%22%3A0%7D%22%2C%22signature%22%3A%220xaf2df1a853b055ca560266f53fc6eac4cc477db2c6322b180e898701a6f1ae197511b72e7d82ef1507246fa16e83c884cc6d2b9e9fb11a029e2e1f20914a474301%22%7D&skip_play_count=true
+access-control-allow-origin: *
+HTTP/2 307 
+location: https://validator.eeba4a6ca56a0d87af802270217c2a51.r2.cloudflarestorage.com/maf72/baeaaaiqseav4ansc2y5c6243qyd5evs25gzur457mfk5fohpxka5dmnrmaf72?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Checksum-Mode=ENABLED&X-Amz-Credential=79889b5430a0f0386b0853859defc17a%2F20261031%2FENAM%2Fs3%2Faws4_request&X-Amz-Date=20261031T194608Z&X-Amz-Expires=434&X-Amz-SignedHeaders=host&x-id=GetObject&X-Amz-Signature=f389ed04b2928df7eb9f7bb2d679c5155633d33c91aad7a3c1031475336671be
+access-control-allow-headers: *
+access-control-allow-methods: GET, HEAD, PUT, PATCH, POST, DELETE, OPTIONS
+access-control-allow-origin: *
+HTTP/1.1 206 Partial Content
+Content-Type: audio/mpeg
+Access-Control-Allow-Origin: *
+== hosts
+{"data":["https://api.audius.co"],"env":"prod","git":"c9b6dfe568e393098ad08f7397da3fea7a8239b7","started":"2026-10-31T09:25:49.112841155Z","uptime":"10h20m19s"}
