@@ -1,0 +1,30 @@
+name: audius-check
+on:
+  workflow_dispatch:
+  push:
+    paths: ['.github/workflows/audius-check.yml']
+permissions:
+  contents: write
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Interroger Audius
+        run: |
+          mkdir -p diag
+          {
+          echo "== trending"; curl -s -m 20 "https://api.audius.co/v1/tracks/trending?app_name=OndeMusique&limit=1" | head -c 3000; echo
+          ID=$(curl -s -m 20 "https://api.audius.co/v1/tracks/trending?app_name=OndeMusique&limit=1" | python3 -c "import sys,json;print(json.load(sys.stdin)['data'][0]['id'])")
+          echo "== id $ID"
+          echo "== stream no_redirect"; curl -s -m 20 -w "\nHTTP %{http_code}\n" "https://api.audius.co/v1/tracks/$ID/stream?app_name=OndeMusique&no_redirect=true" | head -c 1500; echo
+          echo "== stream direct (headers)"; curl -s -m 20 -D - -o /dev/null "https://api.audius.co/v1/tracks/$ID/stream?app_name=OndeMusique" | head -30
+          echo "== stream follow"; curl -s -m 30 -L -o /tmp/a -w "HTTP %{http_code} type=%{content_type} size=%{size_download} url=%{url_effective}\n" -H "Origin: https://rorooo09.github.io" "https://api.audius.co/v1/tracks/$ID/stream?app_name=OndeMusique"
+          echo "== CORS final"; curl -s -m 30 -L -D - -o /dev/null -H "Origin: https://rorooo09.github.io" -r 0-100 "https://api.audius.co/v1/tracks/$ID/stream?app_name=OndeMusique" | grep -i -E "^HTTP|access-control|location|content-type"
+          echo "== hosts"; curl -s -m 20 https://api.audius.co | head -c 600; echo
+          } > diag/audius.txt 2>&1
+          cat diag/audius.txt
+      - name: Enregistrer
+        run: |
+          git config user.name "github-actions"; git config user.email "actions@github.com"
+          git add diag/audius.txt; git commit -m "Résultat du diagnostic Audius" || true; git push
