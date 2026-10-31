@@ -645,15 +645,12 @@ const streamUrl = (t, base = API) => `${base}/tracks/${encodeURIComponent(t.aid)
 let hostsP = null;
 const getHosts = () => hostsP || (hostsP = fetch('https://api.audius.co', {headers:{Accept:'application/json'}}).then(r => r.json()).then(j => (Array.isArray(j.data) ? j.data : []).filter(h => typeof h === 'string').sort(() => Math.random() - .5).slice(0, 3)).catch(() => []));
 async function streamCandidates(t) {
-  const out = [];
+  const out = [streamUrl(t)];
   if (t.su) out.push(t.su);
   try {
     const r = await fetch(`${API}/tracks/${encodeURIComponent(t.aid)}/stream?${qs({no_redirect:'true'})}`, {headers:{Accept:'application/json'}});
     if (r.ok) { const j = await r.json(); const u = typeof j.data === 'string' ? j.data : j.data && j.data.url; if (u) out.push(u); }
   } catch (e) {}
-  out.push(streamUrl(t));
-  const hosts = await getHosts();
-  hosts.forEach(h => out.push(streamUrl(t, h.replace(/\/$/, '') + '/v1')));
   return [...new Set(out)];
 }
 const artOf = t => t.art || cover(t.id, t.hue, t.file ? 'waves' : 'rings');
@@ -674,16 +671,20 @@ const audio = new Audio(); audio.preload = 'auto';
 audio.volume = S.vol;
 let loadingTrack = false;
 let cands = [], candIdx = 0, loadToken = 0;
+let failedIdx = -1;
 function tryCandidate(autoplay) {
-  audio.src = cands[candIdx];
+  const idx = candIdx; audio.src = cands[idx];
   if (autoplay) audio.play().catch(err => {
     if (err.name === 'AbortError') return;
     if (err.name === 'NotAllowedError') { loadingTrack = false; toast('Touchez lecture pour démarrer'); syncPlayer(); return; }
-    failCandidate(autoplay);
+    failCandidate(autoplay, idx);
   });
 }
-function failCandidate(autoplay) {
-  if (candIdx + 1 < cands.length) { candIdx++; tryCandidate(autoplay); return true; }
+function failCandidate(autoplay, idx = candIdx) {
+  if (idx !== candIdx) return true;          // échec déjà traité pour cette source
+  if (failedIdx === idx) return true;
+  failedIdx = idx;
+  if (candIdx + 1 < cands.length) { candIdx++; failedIdx = -1; tryCandidate(autoplay); return true; }
   return false;
 }
 let extSkips = 0;
@@ -699,9 +700,9 @@ async function setTrack(id, autoplay, fromAuto) {
   }
   S.cur = id; loadingTrack = !!autoplay; const my = ++loadToken;
   setMediaSession(t); syncPlayer();
-  if (t.file) { cands = [t.url]; } else { cands = [streamUrl(t)]; try { cands = await streamCandidates(t); } catch (e) {} }
-  if (my !== loadToken) return;
-  candIdx = 0; tryCandidate(autoplay);
+  cands = t.file ? [t.url] : [streamUrl(t)].concat(t.su ? [t.su] : []);
+  candIdx = 0; failedIdx = -1; tryCandidate(autoplay);
+  if (!t.file) streamCandidates(t).then(c => { if (my === loadToken) c.forEach(u => { if (!cands.includes(u)) cands.push(u); }); }).catch(() => {});
   if (t.remote || t.file) { S.recent = [t.id, ...S.recent.filter(x => x !== t.id)].slice(0, 30); save(); }
   setMediaSession(t); syncPlayer();
 }
